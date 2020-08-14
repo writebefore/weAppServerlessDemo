@@ -1,2 +1,21 @@
-<!--miniprogram/pages/group/group.wxml-->
-<text>miniprogram/pages/group/group.wxml</text>
+<!-- miniprogram/pages/group/group.wxml -->
+<view class="container">
+    <view class="group-list">
+        <view class="title">
+            <image src="https://677a-gzhiyi-154dd4-1256703754.tcb.qcloud.la/group3.png?sign=1119403c4109bbb505d07aa6d42ffdff&t=1545558495" />
+            <text>我的组群</text>
+        </view>
+        <block wx:for="{{groupData}}" wx:key="_id">
+            <view class="cell">
+                <text>{{item.name}}</text>
+                <view class="rightContainer">
+                    <view class="userinfo-avatar">
+                        <open-data type="userAvatarUrl"></open-data>
+                    </view>
+                    <van-icon name="arrow" color="gary" />
+                </view>
+            </view>
+        </block>
+        
+    </view>
+</view>

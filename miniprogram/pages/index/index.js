@@ -23,8 +23,8 @@ Page({
    * 关闭对话框
    */
   closeDialog(){
-    // this.clearDialog();
-    console.log("关闭")
+    this.clearDialog();
+    console.log("关闭");
     this.setData({
       isShow:false
     })
@@ -49,7 +49,7 @@ Page({
       self.selectComponent("#new-group-model").stopLoading();
       return;
     }
-    else{
+    else{    // 调用云函数
       wx.cloud.callFunction({
       name:"createGroup",
       data:{
@@ -58,13 +58,18 @@ Page({
       success(res){
         Notify({selector: '#van-notify', type: 'success', message: '创建成功',duration: 2000});
         self.closeDialog();
+        const timer = setTimeout(()=>{
+          wx.switchTab({
+            url: '/pages/group/group'
+          });
+        },1000)
       },
       fail(error){
         console.log(error)
       }
     })
     }
-    // 调用云函数
+
     
   },
   /**
