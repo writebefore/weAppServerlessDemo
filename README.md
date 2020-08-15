@@ -11,3 +11,4 @@
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
 ## 云开发的小例子
+- 实现云函数的增删改查
